@@ -46,6 +46,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1136, 596);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // label_clientes
             // 
@@ -70,7 +71,7 @@
             // dataGridCostumers
             // 
             dataGridCostumers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridCostumers.Location = new Point(168, 207);
+            dataGridCostumers.Location = new Point(170, 204);
             dataGridCostumers.Name = "dataGridCostumers";
             dataGridCostumers.Size = new Size(801, 253);
             dataGridCostumers.TabIndex = 0;

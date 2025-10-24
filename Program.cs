@@ -19,12 +19,13 @@ namespace InventoryApp
             var productRepo = new ProductRepository();
             var clientRepo = new ClientRepository();
             var saleRepo = new SaleRepository();
+            var  salesRepo = new SalesRepository();
 
             // 🔹 Crear el servicio con los repositorios
             var salesService = new SalesService(productRepo, saleRepo);
 
             // 🔹 Ejecutar el formulario principal pasando las dependencias
-            Application.Run(new MainForm(productRepo, clientRepo, salesService));
+            Application.Run(new MainForm(productRepo, clientRepo, salesService,salesRepo));
         }
     }
 }

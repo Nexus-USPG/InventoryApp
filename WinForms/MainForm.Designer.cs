@@ -56,6 +56,7 @@
             btnVerVentas.TabIndex = 3;
             btnVerVentas.Text = "VISUALIZAR VENTAS";
             btnVerVentas.UseVisualStyleBackColor = true;
+            btnVerVentas.Click += btnVerVentas_Click;
             // 
             // btnClientes
             // 

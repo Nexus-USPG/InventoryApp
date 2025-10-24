@@ -146,6 +146,8 @@ namespace InventoryApp.WinForms
                 {
                     e.Cancel = true;
                     dataGridCostumers.Rows[e.RowIndex].ErrorText = "El nombre es requerido.";
+                    MessageBox.Show("El nombre es requerido.",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else dataGridCostumers.Rows[e.RowIndex].ErrorText = string.Empty;
             }
@@ -155,6 +157,8 @@ namespace InventoryApp.WinForms
                 {
                     e.Cancel = true;
                     dataGridCostumers.Rows[e.RowIndex].ErrorText = "Precio inválido (>= 0).";
+                    MessageBox.Show("Precio inválido",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else dataGridCostumers.Rows[e.RowIndex].ErrorText = string.Empty;
             }
@@ -330,26 +334,13 @@ namespace InventoryApp.WinForms
             return true;
         }
 
-        private static bool TryGetDecimal(DataRow r, string col, out decimal value)
-        {
-            value = 0m;
-            if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return false;
-            return decimal.TryParse(r[col].ToString(), out value);
-        }
-
-        private static bool TryGetInt(DataRow r, string col, out int value)
-        {
-            value = 0;
-            if (!r.Table.Columns.Contains(col) || r[col] == DBNull.Value) return false;
-            return int.TryParse(r[col].ToString(), out value);
-        }
-
         private static int ToInt(object? o)
             => o == null || o == DBNull.Value ? 0 : int.TryParse(o.ToString(), out var i) ? i : 0;
 
-        private static decimal ToDecimal(object? o)
-            => o == null || o == DBNull.Value ? 0m : decimal.TryParse(o.ToString(), out var d) ? d : 0m;
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 
 }
